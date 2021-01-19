@@ -1,4 +1,4 @@
-# Elementi di Matematica Computazionale
+# **Elementi** di Matematica Computazionale
 
 ## Logica
 
@@ -183,11 +183,34 @@ Possiamo poi facilmente dedurre le seguenti affermazioni:
 Facciamo un esempio:
 
 ```
-- (P → Q ∧ R) → (P → Q), per risolvere la traccia la dividiamo e prendiamo la prima parentesi;
-Sappiamo da quanto visto prima che Q ∧ R → Q, possiamo quindi dedurre che (P → Q) → (P → Q), per qui una tautologia.
+- (P ⇒ Q ∧ R) ⇒ (P ⇒ Q), per risolvere la traccia la dividiamo e prendiamo la prima parentesi;
+Sappiamo da quanto visto prima che Q ∧ R ⇒ Q, possiamo quindi dedurre che (P ⇒ Q) ⇒ (P ⇒ Q), per qui una tautologia.
 ```
 
 ```
-- (P v Q → R) → (P → Q), prendiamo la prima parentesi, e sappiamo dalla seconda formula che P → P v Q, quindi P → R, possiamo sostituire P con P v Q
+- (P v Q ⇒ R) ⇒ (P ⇒ Q), prendiamo la prima parentesi, e sappiamo dalla seconda formula che P ⇒ P v Q, quindi P ⇒ R, potremmo sostituire P con P v Q;
+(P v Q ⇒ R) ⇒ (P ⇒ R)
+```
+
+Principio di risoluzione per la disgiunzione:
+
+```
+((P v Q) ∧ (P ⇒ R) ∧ (Q ⇒ S)) ⇒ (R v S)
+```
+
+```
+- (P v Q) ∧ (¬P v R) ⇒ Q v R, riscrivo (¬P v R) come implicazione e quindi P ⇒ R;
+(¬Q ⇒ P ) ∧ (P ⇒ R), per la transitività dell'implicazione possiamo dire che ¬Q → P → R e quindi Q → R;
+Quindi abbiamo dimostrato che (Q v P) ∧ (¬P v R) → (Q v R)
+```
+
+---
+
+## Forme Normali
+
+Esiste un insieme **minimo** di operatori che sono in grado di formare una proposizione
+
+```
+- Insieme standard: and, or, not, implicazione, equivalenza
 ```
 
