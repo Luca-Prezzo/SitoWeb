@@ -42,10 +42,10 @@ Una proposizione è un enunciato dichiarativo che "afferma qualcosa" e che deve 
 
 Le proposizioni sono essenzialmente divisibili in due categorie:
 
-|          Atomiche           |        Non Atomiche         |
-| :-------------------------: | :-------------------------: |
-| Roma è la capitale d'Italia |         Che ora è?          |
-|          1 + 1 = 2          | Leggi questo con attenzione |
+| <span style="color:#163055">Atomiche</span> | <span style="color:#163055">Non Atomiche</span> |
+| :-----------------------------------------: | :---------------------------------------------: |
+|         Roma è la capitale d'Italia         |                   Che ora è?                    |
+|                  1 + 1 = 2                  |           Leggi questo con attenzione           |
 
 La differenza è che le proposizioni atomiche possono essere vere oppure false, 1 o 0, quelle non atomiche invece hanno risposte diverse.
 
@@ -59,14 +59,14 @@ La differenza è che le proposizioni atomiche possono essere vere oppure false, 
 
 **I connettivi logici** servono a collegare o unire due proposizioni.
 
-|     Connettivo     | Simbolo | Operazione   |
-| :----------------: | :-----: | ------------ |
-|        NOT         |    ¬    | Negazione    |
-|        AND         |    ∧    | Congiunzione |
-|         OR         |    V    | Disgiunzione |
-|   Se... allora..   | &rArr;  | Implicazione |
-| ...Se e solo se... |    ≡    | Equivalenza  |
-|      ...Se...      | &lArr;  | Conseguenza  |
+| <span style="color:#163055">Connettivo</span> | <span style="color:#163055">Simbolo</span> | <span style="color:#163055">Operazione</span> |
+| :-------------------------------------------: | :----------------------------------------: | --------------------------------------------- |
+|                      NOT                      |                     ¬                      | Negazione                                     |
+|                      AND                      |                     ∧                      | Congiunzione                                  |
+|                      OR                       |                     V                      | Disgiunzione                                  |
+|                Se... allora..                 |                   &rArr;                   | Implicazione                                  |
+|              ...Se e solo se...               |                     ≡                      | Equivalenza                                   |
+|                   ...Se...                    |                   &lArr;                   | Conseguenza                                   |
 
 Ad esempio:
 
@@ -129,12 +129,12 @@ Per dimostrare che P è una tautologia possiamo ricorrere a più metodi:
 
    Ad esempio:
 
-   |   P   |   Q   |  P∧Q  |
-   | :---: | :---: | :---: |
-   | Vero  | Vero  | Vero  |
-   | Vero  | Falso | Falso |
-   | Falso | Vero  | Falso |
-   | Falso | Falso | Falso |
+   | <span style="color:#163055">P</span> | <span style="color:#163055">Q</span> | <span style="color:#163055">P∧Q</span> |
+   | :----------------------------------: | :----------------------------------: | :------------------------------------: |
+   |                 Vero                 |                 Vero                 |                  Vero                  |
+   |                 Vero                 |                Falso                 |                 Falso                  |
+   |                Falso                 |                 Vero                 |                 Falso                  |
+   |                Falso                 |                Falso                 |                 Falso                  |
 
    Abbiamo analizzato tutte le possibilità e possiamo notare come P∧Q non è una tautologia.
 
@@ -200,17 +200,61 @@ Principio di risoluzione per la disgiunzione:
 
 ```
 - (P v Q) ∧ (¬P v R) ⇒ Q v R, riscrivo (¬P v R) come implicazione e quindi P ⇒ R;
-(¬Q ⇒ P ) ∧ (P ⇒ R), per la transitività dell'implicazione possiamo dire che ¬Q → P → R e quindi Q → R;
-Quindi abbiamo dimostrato che (Q v P) ∧ (¬P v R) → (Q v R)
+(¬Q ⇒ P ) ∧ (P ⇒ R), per la transitività dell'implicazione possiamo dire che ¬Q ⇒ P ⇒ R e quindi Q ⇒ R;
+Quindi abbiamo dimostrato che (Q v P) ∧ (¬P v R) ⇒ (Q v R)
 ```
 
 ---
 
 ## Forme Normali
 
-Esiste un insieme **minimo** di operatori che sono in grado di formare una proposizione
+Esiste un insieme **minimo** di operatori che sono in grado di formare una proposizione possono essere OR e NOT, NOT ed AND oppure NOT ed IMPLICAZIONE.
+
+Si può minimizzare ulteriormente utilizzando soltanto il NAND.
 
 ```
-- Insieme standard: and, or, not, implicazione, equivalenza
+A ⇒ B ≡ ¬A v B, quindi l'implicazione può essere sostituita con or e not;
+A ≡ B ≡ A ⇒ B ∧ B ⇒ A, se A e B sono equivalenti allora uno implica l'altro;
+A ∧ B ≡ ¬¬(A ∧ B) ≡ ¬(¬A v ¬B) o in caso contrario ↓↓↓
+A v B ≡ ¬¬(A v B) ≡ ¬(¬A ∧ ¬B)
 ```
+
+Diremo che la nostra formula sarà scritta in **forma standard:**
+
+- **Congiuntiva**, (congiunzione di disgiunzione), quando è formata da (P1vP2v...)∧(Q1vQ2v...)∧...
+
+- **Disgiuntiva**, (disgiunzione di congiunzioni), quando è formata da (P1∧P2∧...)v(Q1∧Q2∧...)v...
+
+  P, Q o R rappresentano degli atomi o la loro negazione.
+
+ ```
+Esistono altri operatori che però non utilizzeremo, come:
+- OR ESCLUSIVO, ⊕, "A ⊕ B" = (A ∧ ¬B) v (¬A ∧ B).
+  L'or esclusivo restituisce vero solo se uno soltanto dei due operatori è vero.
+- NAND, ⊙, "A ⊙ B" = ¬(A ∧ B) = ¬A v ¬B.
+  Il nand, o not and, restituisce vero se l'and è falso e viceversa
+ ```
+
+-----
+
+## Esercizio
+
+Proviamo a dimostrare che (A ⇒ B) è una tautologia.
+
+```
+A ⇒ B possiamo riscriverla come (T ∧ A) ⇒ (B v F) perchè mettendo in and True non cambia il valore, e mettendo False in un or non cambia, abbiamo riscritto la stessa formula in un altro modo.
+Ora, sapendo che il corpo è una congiunzione e la testa una disgiunzione possiamo spostare i singoli elementi da una parte all'altra facendo le opportune modifiche.
+Possiamo riscrivere (A1 ∧ A2) ⇒ (B1 v B2 ) come (A1 ∧ ¬B2) ⇒ (B1 v ¬A2), quindi A ⇒ B può essere riscritta come T ⇒ B v ¬A oppure come A ∧ ¬B ⇒ F
+```
+
+E' facile intuire che se P ⇒ Q è una tautologia, allora P ∧ ¬Q ⇒ F sarà una contraddizione.
+
+---
+
+## Dimostrazione per assurdo
+
+Supponiamo di avere una formula, P ⇒ Q, e volessimo dimostrare che sia una tautologia, potremmo ricorrere alla dimostrazione per assurdo asserendo la formula come falsa.
+
+P ⇒ Q ≡ P ∧ ¬Q ⇒ F, diciamo che per assurdo che la formula implichi il falso.
+Se lo scopo è dimostrare che la formula P → Q è una tautologia, possiamo farlo seguendo la strada opposta, ovvero dimostrando che la sua negazione, in questo cas P ∧ ¬Q → F è una contraddizione.
 
