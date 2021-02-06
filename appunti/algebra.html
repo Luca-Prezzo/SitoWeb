@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
-<title>Informatica</title><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+<title>Algebra Lineare</title><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
 .mac-os-11 { --title-bar-height:28px; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
@@ -262,20 +262,20 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
   --bg-color: white;
   --side-bar-bg-color: #f5f7f9;
   --control-text-color: #3b454e;
-  --primary-color: rgb(56, 132, 255);
-  --primary-btn-border-color: rgb(56, 132, 255);
+  --primary-color: rgb(26, 168, 139);
+  --primary-btn-border-color: rgb(26, 168, 139);
   --active-file-bg-color: #e6ecf1;
   --active-file-text-color: inherit;
-  --active-file-border-color: rgb(56, 132, 255);
+  --active-file-border-color: rgb(26, 168, 139);
   --item-hover-text-color: #242a31;
   --item-hover-bg-color: #f5f7f9;
   --window-border: 1px solid #e6ecf1;
   --select-text-font-color: white;
-  --select-text-bg-color: #3277e5;
+  --select-text-bg-color: rgb(50, 119, 229);
 
   --md-char-color: #9daab6;
   --heading-char-color: #9daab6;
-  --meta-content-color: rgb(56, 132, 255);
+  --meta-content-color: rgb(26, 168, 139);
 
   --borders: #e6ecf1;
   --table-border-color: #e6ecf1;
@@ -293,10 +293,10 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
   --codeboxes-lighter: #1c375f;
   --rawblock-edit-panel-bd: transparent;
 
-  --primary-color-white: #82abec;
-  --primary-color-white-darker: #5a83c5;
-  --primary-color-darker: #2f6dd1;
-  --focus-ring-color: rgb(56, 132, 255);
+  --primary-color-white: rgb(106, 228, 203);
+  --primary-color-white-darker: rgb(67, 196, 170);
+  --primary-color-darker: rgb(12, 131, 107);
+  --focus-ring-color: rgb(26, 168, 139);
 
   --danger-color: rgb(255, 70, 66);
 
@@ -318,10 +318,6 @@ html,
 .form-control,
 .modal {
   font-size: 16px;
-}
-
-kbd {
-  font-family: var(--font-family);
 }
 
 body {
@@ -906,7 +902,7 @@ table tr td:last-child {
 .md-fences,
 tt {
   border-radius: 0.3rem;
-  color: white;
+  color: #ffffff;
   padding: 1.5rem;
   font-size: 0.8rem;
 }
@@ -920,7 +916,7 @@ code {
   -webkit-box-decoration-break: clone;
 }
 
-.md-fences div.CodeMirror-cursor,
+.md-fences .CodeMirror div.CodeMirror-cursor,
 #typora-source div.CodeMirror-cursor {
   border-left: solid 1px white;
 }
@@ -1171,7 +1167,7 @@ input[type='checkbox']:checked:after {
   color: #156db6;
 }
 
-.md-rawblock-input span.cm-bracket {
+.md-mathblock-input span.cm-bracket {
   color: var(--light-text-color);
 }
 
@@ -1409,6 +1405,16 @@ footer.ty-footer {
   opacity: 0.9;
 }
 
+#typora-sidebar input.file-list-item-file-name {
+  margin: 0.5rem 0rem 0.5rem 0.7rem;
+  padding: 0.4rem !important;
+  line-height: 1rem;
+  float: right;
+  border-radius: 0.3rem;
+  font-weight: 500;
+  background-color: white !important;
+}
+
 #typora-sidebar .file-list-item-count {
   font-size: 0.75rem;
   background-color: var(--primary-color);
@@ -1420,16 +1426,6 @@ footer.ty-footer {
   line-height: 1.25rem;
   position: relative;
   top: 0.3rem;
-}
-
-#typora-sidebar input.file-list-item-file-name {
-  margin: 0.5rem 0rem 0.5rem 0.7rem;
-  padding: 0.4rem !important;
-  line-height: 1rem;
-  float: right;
-  border-radius: 0.3rem;
-  font-weight: 500;
-  background-color: white !important;
 }
 
 #typora-sidebar .file-list-item.file-library-file-node {
@@ -2437,7 +2433,7 @@ select:hover {
   background-color: var(--primary-color);
   border: 1px solid transparent;
   color: white !important /*important required*/;
-  box-shadow: rgba(116, 129, 141, 0.1) 2px 2px 6px, rgba(56, 132, 255, 0.2) 0px 0px 10px;
+  box-shadow: rgba(116, 129, 141, 0.1) 2px 2px 6px, rgba(26, 168, 139, 0.2) 0px 0px 10px;
 }
 
 #m-import-local:hover .preference-item-hint {
@@ -2455,7 +2451,7 @@ select:hover {
   max-width: none;
   padding: 1.5rem;
   background-color: var(--boxes);
-  border-radius: 0rem;
+  border-radius: 0.5rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 1.5rem;
@@ -2571,6 +2567,6 @@ p[type='description'] {
 </style>
 </head>
 <body class='typora-export'>
-<div id='write'  class=''><h1><a name="fondamenti-di-informatica" class="md-header-anchor"></a><span>Fondamenti di informatica</span></h1><p><span>Vi siete mai chiesti come fa il vostro computer a farvi vedere i video di gatti che cadono? O come faccia a sapere che 2 x 3 = 6? O come faccia a sapere che neve in finlandese si dica lumi?</span></p><p><span>Beh, sappiate che non è magia...</span></p><p><span>E no, non c&#39;è nessun omino sotto la tastiera che vi scriva le risposte sullo schermo, ma c&#39;è un lavoro enorme di ingegneria dietro.</span></p><p><span>Partiamo dalla base, dal processore, cuore e cervello di ogni macchina che si occupa di prendere in input, o &quot;in entrata&quot;, una serie di codici e li esegue dal primo all&#39;ultimo.</span></p><p><span>Per fare ciò però non possiamo scriverglielo con il nostro linguaggio, il processore non è in grado di capire l&#39;italiano, esso infatti è in grado di comprendere solo 0 e 1, il cosiddetto </span><code>linguaggio macchina</code><span>, quindi cosa possiamo usare per convertire la nostra lingua in linguaggio macchina? Un traduttore!</span></p><p><span>Esistono diversi linguaggi di programmazione con cui possiamo scrivere i nostri programmi, ognuno con i suoi pro e contro, ma per ora li divideremo soltanto in linguaggi di alto livello e linguaggi di basso livello.</span></p><ul><li><span>I primi prendono il nome di </span><code>linguaggi di alto livello</code><span> perchè sono quelli più simile al nostro linguaggio, più comprensibili e intuitivi;</span></li><li><span>I secondi prendono il nome di </span><code>linguaggi di basso livello</code><span> perchè sono più vicini al linguaggio macchina.</span></li></ul><p><span>Ora che però abbiamo scritto il nostro codice, chi si occuperà di tradurlo? Questo lavoro spetta all&#39;interprete, che si occupa di prendere di volta in volta tutte le line del nostro codice, traducendole in linguaggio macchina e dandole in pasto al processore, che quindi farà partire il nostro codice.</span></p><p><span>Ricapitolando:</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 15.9997px; left: 20.0185px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Programmatore → Codice → Interprete → linguaggio macchina → Processore</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 51px;"></div><div class="CodeMirror-gutters" style="display: none; height: 51px;"></div></div></div></pre><p>&nbsp;</p><p>&nbsp;</p><h1><a name="python" class="md-header-anchor"></a><span>Python</span></h1><p><a href='https://www.python.org/'><span>Python</span></a><span> è un linguaggio di alto livello, sintatticamente semplice ma comunque potente, basti pensare che con le giuste conoscenze si può spaziare dalla creazione di un sito web ad un gioco, dall&#39;analisi dei dati alla scrittura di database.</span></p><p><span>Quello che rende python uno dei linguaggi più diffusi è sicuramente la sua modularità, esistono in rete migliaia di librerie (scaricabili gratuitamente con un package chiamato pip) capaci di fare qualunque cosa.</span></p></div>
+<div id='write'  class=''><h1><a name="algebra-lineare-e-matematica-discreta" class="md-header-anchor"></a><span>Algebra Lineare e Matematica Discreta</span></h1><h2><a name="il-concetto-di-insieme" class="md-header-anchor"></a><span>Il concetto di insieme</span></h2><p><span>Il concetto di insieme è considerato un concetto primitivo, sappiamo tutti cos&#39;è un insieme, non abbiamo bisogno di alcuna spiegazione, quindi riporterò qui sotto solo alcune definizioni secondarie.</span></p><p><span>Innanzitutto avremo bisogno di identificare ciascun insieme in maniera univoca, e lo faremo con le lettere maiuscole, ad esempio: </span><code>l&#39;insieme A, B o C</code><span> , mentre per identificare gli elementi appartenenti all&#39;insieme useremo le lettere minuscole, ad esempio: </span><code>l&#39;elemento a, b o c dell&#39;insieme A</code><span>. Se conosciamo gli elementi di un insieme lo definiremo un </span><code>insieme noto</code><span>.</span></p><p><span>Per rappresentare un insieme possiamo ricorrere a più modalità:</span></p><ul><li><p><span style="color:red"><span>Rappresentazione tabulare:</span></span><span> facendo un esplicito elenco dei suoi elementi</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 15.9998px; left: 20.0185px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">insieme = {elemento1, elemento2, elemento3}</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">A = {a, e, i, o, u}.</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 76px;"></div><div class="CodeMirror-gutters" style="display: none; height: 76px;"></div></div></div></pre></li><li><p><span style="color:red"><span>Rappresentazione caratteristica:</span></span><span> descrivendo le caratteristiche degli elementi che lo compongono.</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 15.9998px; left: 20.0185px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">insieme = {elemento generico x "tale che" x è una vocale}</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">A = {x | x è una vocale}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 101px;"></div><div class="CodeMirror-gutters" style="display: none; height: 101px;"></div></div></div></pre></li></ul><ul><li><span style="color:red"><span>Diagramma di Venn:</span></span></li></ul><p><img src="/var/www/html/assets/images/venn.png" style="zoom:50%;" /></p><p><span>Per indicare</span></p></div>
 </body>
 </html>
